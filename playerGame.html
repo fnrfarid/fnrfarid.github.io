@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css" />
+		<title>Player vs Player Game</title>
+	</head>
+
+	<body>
+
+		<div class="container">
+			<h1>Let's Play Game</h1>
+			<h1>
+				<span id="p1Score">0</span>
+				to
+				<span id="p2Score">0</span>
+			</h1>
+
+			<p>Playing to: <span class="playingTo">0</span></p>
+			
+			<form>
+				<input type="number" id="inputScore">
+			</form>
+			<br />
+			<button class="btn btn-primary" id="p1Btn">Player-1</button>
+			<button class="btn btn-primary" id="p2Btn">Player-2</button>
+			<button id="resetBtn" class="btn btn-primary">Reset</button>
+
+		</div>
+		<script src="playerGame.js"></script>
+	
+	</body>
+
+</html>
