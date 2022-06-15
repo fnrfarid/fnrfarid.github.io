@@ -21,7 +21,10 @@ let p1Score = 0
 let p2Score = 0
 let playingToScore = 5
 let gameOver = false;
-let turnPlayer = 'p2'
+const players = ['p1', 'p2']
+let randomNum = Math.random()<0.5?0:1 
+let turnPlayer = players[randomNum]
+console.log('Reload page player is: ', turnPlayer)
 //updating on DOM layer
 playingToElm.textContent = playingToScore
 
@@ -100,11 +103,16 @@ resetBtnElm.addEventListener('click', (evt) =>{
     p2Score = 0
     playingToScore = 5
     gameOver = false;
-    turnPlayer = 'p2'
+    //players = ['p1', 'p2']
+    randomNum = Math.random()<0.5?0:1 
+    turnPlayer = players[randomNum]
 
-    p1BtnElm.removeAttribute('disabled')
-    p2BtnElm.removeAttribute('disabled')
-
+    if (randomNum === 0){
+        p1BtnElm.removeAttribute('disabled')
+    }else {
+        p2BtnElm.removeAttribute('disabled')    
+    }    
+    console.log('Reset btn player is: ', turnPlayer)
     p1ScoreElm.textContent = p1Score
     p2ScoreElm.textContent = p2Score
     playingToElm.textContent = playingToScore
