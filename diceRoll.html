@@ -6,11 +6,12 @@
 		<link rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css" />
 		<title>Roll the dice</title>
+        <link rel="stylesheet" href="style.css">
 	</head>
 
 	<body>
 
-		<div class="container">
+		<div class="container text-center my-5">
 			<h1>Let's Roll the dice</h1>
 			<p>Winning Score: <span class="playingTo">0</span></p>
 			<p>To set different winning score input a number here</p>
@@ -24,12 +25,21 @@
 				vs
 				<span id="p2Score">0</span>
 			</h1>
-			<h2>Dice Roll Output: <span id="diceScore">0</span></h2>
+			<h2>Last Dice Roll: <span id="diceScore">0</span></h2>
+
 			<button class="btn btn-primary" id="p1Btn">Player-1</button>
 			<button class="btn btn-primary" id="p2Btn">Player-2</button>
 			<button id="resetBtn" class="btn btn-primary">Reset</button>
 
 		</div>
+        <div class="container">
+            <div class="row w-25 m-auto">
+                <ul class="list-group text-center" id="result-list"></ul>
+            </div>
+        </div>
+
+
+
 		<script src="diceRoll.js"></script>
 	
 	</body>

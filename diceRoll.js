@@ -9,6 +9,7 @@ const p2BtnElm = document.querySelector('#p2Btn')
 const resetBtnElm = document.querySelector('#resetBtn')
 const formElm = document.querySelector('form')
 const diceScoreElm = document.querySelector('#diceScore')
+const resultList = document.querySelector('#result-list');
 
 //Declaring all the data layer 
 let p1Score = 0
@@ -61,6 +62,11 @@ p1BtnElm.addEventListener('click', (evt) => {
         turnPlayer = 'p2'
         p1BtnElm.setAttribute('disabled', 'disabled')
         p2BtnElm.removeAttribute('disabled')
+        let listItem = document.createElement('li');
+        listItem.classList = 'list-group-item';
+        listItem.innerHTML = 'Player-1 rolled: ' + diceRoll
+        resultList.appendChild(listItem);
+        console.log(listItem)
     }
 
     if (p1Score >= playingToScore){
@@ -83,6 +89,11 @@ p2BtnElm.addEventListener('click', (evt) => {
         turnPlayer ='p1'
         p2BtnElm.setAttribute('disabled', 'disabled')
         p1BtnElm.removeAttribute('disabled')
+        let listItem = document.createElement('li');
+        listItem.classList = 'list-group-item';
+        listItem.innerHTML = 'Player-2 rolled: ' + diceRoll
+        resultList.appendChild(listItem);
+        console.log(listItem)
     }
 
     if (p2Score >= playingToScore){
@@ -112,4 +123,5 @@ resetBtnElm.addEventListener('click', (evt) =>{
     p1ScoreElm.textContent = p1Score
     p2ScoreElm.textContent = p2Score
     playingToElm.textContent = playingToScore
+    resultList.textContent = ""
 })
